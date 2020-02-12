@@ -1,0 +1,43 @@
+<div *ngIf="householdsLoading$ | async as loader; else content">
+  <nb-card [nbSpinner]="true" nbSpinnerStatus="success">
+    <nb-card-body>
+      LOADING..
+    </nb-card-body>
+  </nb-card>
+</div>
+<ng-template #content>
+  <div *ngIf="households$ | async as households">
+    <div *ngIf="households.length > 0">
+      <div class="row justify-content-center">
+        <div class="col-md-4" *ngFor="let home of households">
+          <nb-card status="success" class="card2" (click)="selectHousehold(home)">
+            <nb-card-header>{{home.name}}</nb-card-header>
+            <img src="../../assets/cmslhvxgarsrplkbudqx.jpg" height="300" width="100%">
+            <nb-card-body>
+              <div class="row">
+                <div class="col-md-4">
+                  Bills Due this Month
+                  <h6 style="color: green;">$32,294</h6>
+                </div>
+                <div class="col-md-4">
+                  <div>Events this Month </div>
+                  <h6 style="color: green;">4</h6>
+                </div>
+                <div class="col-md-4">sometingg else</div>
+              </div>
+            </nb-card-body>
+            <nb-card-footer>By Wikipedia</nb-card-footer>
+          </nb-card>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="households.length === 0">
+      <nb-card>
+        <nb-card-body>
+          You haven't added a household yet.. why don't you get started?
+          <button nbButton size="medium" status="success" (click)="openHouseholdEvent()">Add Household</button>
+        </nb-card-body>
+      </nb-card>
+    </div>
+  </div>
+</ng-template>
