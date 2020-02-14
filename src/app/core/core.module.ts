@@ -12,6 +12,7 @@ import { LogResponseInterceptor } from './log-response.interceptor';
 import { CacheInterceptor } from './cache.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [
 
@@ -22,7 +23,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     AppRoutingModule
   ],
   exports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [
     FirebaseService,

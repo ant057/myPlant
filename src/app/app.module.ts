@@ -9,7 +9,7 @@ import { CoreModule } from './core/core.module';
 
 // ngrx store
 import { StoreModule } from '@ngrx/store';
-import { DevtoolsModule } from '@ngrx/devtools';
+// import { DevtoolsModule } from '@ngrx/devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { reducer } from './state/app.reducer';
 import { AppEffects } from './state/app.effects';
@@ -22,7 +22,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 
 // ui
-
 
 // firestore
 import { AngularFireModule } from '@angular/fire';
@@ -38,7 +37,7 @@ import { fromEventPattern } from 'rxjs';
     HomeComponent
   ],
   entryComponents: [
-    AddPaymentComponent
+    // AddPaymentComponent
   ],
   imports: [
     CoreModule,
@@ -51,11 +50,11 @@ import { fromEventPattern } from 'rxjs';
     // FlexLayoutModule,
     StoreModule.forRoot({ app: reducer}),
     EffectsModule.forRoot([AppEffects]),
-    DevtoolsModule.instrument({
-      name: 'myPlant OS Dev tools',
-      maxAge: 25,
-      logOnly: environment.production
-    })
+    // DevtoolsModule.instrument({
+    //   name: 'myPlant OS Dev tools',
+    //   maxAge: 25,
+    //   logOnly: environment.production
+    // })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,20 +2,20 @@ import { AppActions, AppActionTypes } from './app.actions';
 import { Lists } from '../models/app/list';
 
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { Household } from '../models/household/household';
+import { Plant } from '../models/plant/plant';
 
 export interface AppState {
     lists: Lists[];
-    households: Household[];
-    selectedHousehold: Household;
-    householdsLoading: boolean;
+    plants: Plant[];
+    selectedPlant: Plant;
+    plantsLoading: boolean;
 }
 
 const initialState: AppState = {
     lists: undefined,
-    households: undefined,
-    selectedHousehold: undefined,
-    householdsLoading: false
+    plants: undefined,
+    selectedPlant: undefined,
+    plantsLoading: false
 };
 
 const getAppFeatureState = createFeatureSelector<AppState>('app');
@@ -26,63 +26,63 @@ export const getLists = createSelector(
      state => state.lists
  );
 
-export const getHouseholds = createSelector(
+export const getPlants = createSelector(
     getAppFeatureState,
-    state => state.households
+    state => state.plants
 );
 
-export const getSelectedHousehold = createSelector(
+export const getSelectedPlant = createSelector(
     getAppFeatureState,
-    state => state.selectedHousehold
+    state => state.selectedPlant
 );
 
-export const getHouseholdsLoading = createSelector(
+export const getPlantsLoading = createSelector(
     getAppFeatureState,
-    state => state.householdsLoading
+    state => state.plantsLoading
 );
 
 export function reducer(state = initialState, action: AppActions): AppState {
     switch (action.type) {
 
-        case AppActionTypes.LoadLists:
-            return {
-                ...state
-            };
+        // case AppActionTypes.LoadLists:
+        //     return {
+        //         ...state
+        //     };
 
-        case AppActionTypes.LoadListsSuccess:
-            return {
-                ...state,
-                lists: action.payload
-            };
+        // case AppActionTypes.LoadListsSuccess:
+        //     return {
+        //         ...state,
+        //         lists: action.payload
+        //     };
 
-        case AppActionTypes.LoadListsError:
-            return {
-                ...state
-            };
+        // case AppActionTypes.LoadListsError:
+        //     return {
+        //         ...state
+        //     };
 
-        case AppActionTypes.LoadHouseholds:
-            return {
-                ...state,
-                householdsLoading: true
-            };
-
-        case AppActionTypes.LoadHouseholdsSuccess:
+        case AppActionTypes.LoadPlants:
             return {
                 ...state,
-                households: action.payload,
-                householdsLoading: false
+                plantsLoading: true
             };
 
-        case AppActionTypes.LoadHouseholdsError:
+        case AppActionTypes.LoadPlantsSuccess:
             return {
                 ...state,
-                householdsLoading: false
+                plants: action.payload,
+                plantsLoading: false
             };
 
-        case AppActionTypes.SelectHousehold:
+        case AppActionTypes.LoadPlantsError:
+            return {
+                ...state,
+                plantsLoading: false
+            };
+
+        case AppActionTypes.SelectPlant:
             return{
                 ...state,
-                selectedHousehold: action.payload
+                selectedPlant: action.payload
             };
 
         default:

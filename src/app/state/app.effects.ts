@@ -4,7 +4,7 @@ import { FirebaseService } from '../core/firebase.service';
 import * as appActions from './app.actions';
 import { mergeMap, map } from 'rxjs/operators';
 import { Lists } from '../models/app/list';
-import { Household } from '../models/household/household';
+import { Plant } from '../models/plant/plant';
 
 @Injectable()
 export class AppEffects {
@@ -13,19 +13,19 @@ export class AppEffects {
                 private firebase: FirebaseService) {
     }
 
-    @Effect()
-    loadLists$ = this.actions$.pipe(
-        ofType(appActions.AppActionTypes.LoadLists),
-        mergeMap((action: appActions.LoadLists) => this.firebase.getLists().pipe(
-            map((lists: Lists[]) => (new appActions.LoadListsSuccess(lists)))
-        ))
-    );
+    // @Effect()
+    // loadLists$ = this.actions$.pipe(
+    //     ofType(appActions.AppActionTypes.LoadLists),
+    //     mergeMap((action: appActions.LoadLists) => this.firebase.getLists().pipe(
+    //         map((lists: Lists[]) => (new appActions.LoadListsSuccess(lists)))
+    //     ))
+    // );
 
     @Effect()
-    loadHouseholds$ = this.actions$.pipe(
-        ofType(appActions.AppActionTypes.LoadHouseholds),
-        mergeMap((action: appActions.LoadHouseholds) => this.firebase.getMyHouseholds(action.payload).pipe(
-            map((households: Household[]) => (new appActions.LoadHouseholdsSuccess(households)))
+    loadPlants$ = this.actions$.pipe(
+        ofType(appActions.AppActionTypes.LoadPlants),
+        mergeMap((action: appActions.LoadPlants) => this.firebase.getMyPlants(action.payload).pipe(
+            map((plants: Plant[]) => (new appActions.LoadPlantsSuccess(plants)))
         ))
     );
 }

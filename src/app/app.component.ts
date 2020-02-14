@@ -9,7 +9,7 @@ import { Store, select } from '@ngrx/store';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnDestroy, OnInit {
   theme: string;
@@ -19,9 +19,8 @@ export class AppComponent implements OnDestroy, OnInit {
   }
 
   ngOnInit() {
-    this.store.dispatch(new appActions.LoadLists());
+    // this.store.dispatch(new appActions.LoadLists());
   }
-
 
   ngOnDestroy() {
 

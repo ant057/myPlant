@@ -10,7 +10,7 @@ import { Observable, from } from 'rxjs';
 import { map, tap, take, switchMap, mergeMap, expand, takeWhile } from 'rxjs/operators';
 
 // Models
-import { Payment } from '../models/payment/payment';
+// import { Payment } from '../models/payment/payment';
 
 @Injectable()
 export class FirebaseService {
@@ -18,32 +18,16 @@ export class FirebaseService {
   constructor(private afs: AngularFirestore) {
   }
 
-  getEvents() {
-    return this.afs.collection('/events').snapshotChanges();
+  getPlants() {
+    return this.afs.collection('/plants').snapshotChanges();
   }
 
-  getPayments() {
-    return this.afs.collection('/payments').snapshotChanges();
-  }
-
-  getHouseholds() {
-    return this.afs.collection('/household').snapshotChanges();
-  }
-
-  getUsers() {
-    return this.afs.collection('/users').snapshotChanges();
-  }
-
-  getLists() {
-    return this.afs.collection(`/lists`).valueChanges();
+  getMyPlants(uid: string) {
+    return this.afs.collection('/plants', ref => ref.where('userId' , '==', uid)).valueChanges();
   }
 
   getMyHouseholds(uid: string) {
     return this.afs.collection('/household', ref => ref.where('userId' , '==', uid)).valueChanges();
-  }
-
-  getMyUser(uid: string) {
-    return this.afs.collection('/users', ref => ref.where('userId', '==', uid)).valueChanges();
   }
 
   createPayment(value) {
