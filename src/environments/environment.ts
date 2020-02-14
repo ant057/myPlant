@@ -13,10 +13,6 @@ export const environment = {
     storageBucket: 'myplant-62f94.appspot.com',
     messagingSenderId: '541333069913',
     appId: '1:541333069913:web:d655bdda5f58b8d249d148'
-  },
-  windowConfig: {
-    hasBackdrop: true,
-    closeOnBackdropClick: true
   }
 };
 

@@ -21,7 +21,10 @@ import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 
-// ui
+// angular material
+import { MatSliderModule } from '@angular/material/slider';
+import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 // firestore
 import { AngularFireModule } from '@angular/fire';
@@ -50,6 +53,9 @@ import { fromEventPattern } from 'rxjs';
     // FlexLayoutModule,
     StoreModule.forRoot({ app: reducer}),
     EffectsModule.forRoot([AppEffects]),
+    MatSliderModule,
+    MatCardModule,
+    MatCheckboxModule
     // DevtoolsModule.instrument({
     //   name: 'myPlant OS Dev tools',
     //   maxAge: 25,
