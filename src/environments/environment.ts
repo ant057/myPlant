@@ -6,15 +6,16 @@ export const environment = {
   production: false,
   // Initialize Firebase
   firebase: {
-    apiKey: 'AIzaSyDDL-_yR_bia3k7ei11cCNfNBpGiDZSQDY',
-    authDomain: 'myplant-62f94.firebaseapp.com',
-    databaseURL: 'https://myplant-62f94.firebaseio.com',
-    projectId: 'myplant-62f94',
-    storageBucket: 'myplant-62f94.appspot.com',
-    messagingSenderId: '541333069913',
-    appId: '1:541333069913:web:d655bdda5f58b8d249d148'
+    apiKey: "AIzaSyC1joBUPv_wDSfSGAaLqY6asV24APPUiUA",
+    authDomain: "myplant-fa540.firebaseapp.com",
+    databaseURL: "https://myplant-fa540.firebaseio.com",
+    projectId: "myplant-fa540",
+    storageBucket: "myplant-fa540.appspot.com",
+    messagingSenderId: "248651801972",
+    appId: "1:248651801972:web:390fa7ac5c1c6fc6abb821"
   }
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

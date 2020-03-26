@@ -25,6 +25,7 @@ import { HomeComponent } from './home/home.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatButtonModule } from '@angular/material/button';
 
 // firestore
 import { AngularFireModule } from '@angular/fire';
@@ -55,7 +56,8 @@ import { fromEventPattern } from 'rxjs';
     EffectsModule.forRoot([AppEffects]),
     MatSliderModule,
     MatCardModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatButtonModule
     // DevtoolsModule.instrument({
     //   name: 'myPlant OS Dev tools',
     //   maxAge: 25,
