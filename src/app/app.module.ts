@@ -26,6 +26,8 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 // firestore
 import { AngularFireModule } from '@angular/fire';
@@ -57,7 +59,9 @@ import { fromEventPattern } from 'rxjs';
     MatSliderModule,
     MatCardModule,
     MatCheckboxModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSidenavModule,
+    MatToolbarModule
     // DevtoolsModule.instrument({
     //   name: 'myPlant OS Dev tools',
     //   maxAge: 25,
