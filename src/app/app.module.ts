@@ -20,6 +20,11 @@ import { environment } from '../environments/environment';
 // components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { PlantListComponent } from './plant-list/plant-list.component';
+import { PlantDetailComponent } from './plant-detail/plant-detail.component';
+import { PlantReminderComponent } from './plant-reminder/plant-reminder.component';
+import { PlantReminderDetailComponent } from './plant-reminder-detail/plant-reminder-detail.component';
 
 // angular material
 import { MatSliderModule } from '@angular/material/slider';
@@ -28,6 +33,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
 
 // firestore
 import { AngularFireModule } from '@angular/fire';
@@ -40,7 +46,12 @@ import { fromEventPattern } from 'rxjs';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    NavigationComponent,
+    PlantListComponent,
+    PlantDetailComponent,
+    PlantReminderComponent,
+    PlantReminderDetailComponent
   ],
   entryComponents: [
     // AddPaymentComponent
@@ -61,7 +72,8 @@ import { fromEventPattern } from 'rxjs';
     MatCheckboxModule,
     MatButtonModule,
     MatSidenavModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatListModule
     // DevtoolsModule.instrument({
     //   name: 'myPlant OS Dev tools',
     //   maxAge: 25,

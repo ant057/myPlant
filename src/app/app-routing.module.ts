@@ -6,9 +6,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 // components
 import { HomeComponent } from './home/home.component';
+import { PlantListComponent } from './plant-list/plant-list.component';
+import { PlantDetailComponent } from './plant-detail/plant-detail.component';
+import { PlantReminderComponent } from './plant-reminder/plant-reminder.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
+  { path: 'home/plantlist', component: PlantDetailComponent },
+  { path: 'home/plantdetail', component: PlantListComponent },
+  { path: 'home/plantreminderdetail', component: PlantReminderComponent },
   /* { path: 'hero/:id',      component: HeroDetailComponent },
    {
     path: 'heroes',
