@@ -18,7 +18,7 @@
     "component-selector": [
       true,
       "element",
-      "app",
+      "plant",
       "kebab-case"
     ],
     "import-blacklist": [

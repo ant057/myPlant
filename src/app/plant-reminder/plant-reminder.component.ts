@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'plant-plant-reminder',
+  selector: 'plant-reminder',
   templateUrl: './plant-reminder.component.html',
   styleUrls: ['./plant-reminder.component.scss']
 })
