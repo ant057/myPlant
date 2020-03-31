@@ -41,6 +41,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { fromEventPattern } from 'rxjs';
+import { MatElevationHoverDirective } from './directives/mat-elevation-hover.directive';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { fromEventPattern } from 'rxjs';
     PlantListComponent,
     PlantDetailComponent,
     PlantReminderComponent,
-    PlantReminderDetailComponent
+    PlantReminderDetailComponent,
+    MatElevationHoverDirective
   ],
   entryComponents: [
     // AddPaymentComponent

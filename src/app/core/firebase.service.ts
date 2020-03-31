@@ -23,7 +23,7 @@ export class FirebaseService {
   }
 
   getMyPlants(uid: string) {
-    return this.afs.collection('/plants', ref => ref.where('userId' , '==', uid)).valueChanges();
+    return this.afs.collection('/plants', ref => ref.where('uid' , '==', uid)).valueChanges();
   }
 
   getMyHouseholds(uid: string) {

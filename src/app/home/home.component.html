@@ -4,23 +4,31 @@
       LOADING..
     </div>
     <ng-template #content>
+      <div class="mat-display-3">
+        Welcome to myPlant, where you'll never have to wonder when it is time to feed your green friends.
+      </div>
       <div *ngIf="plants$ | async as plants">
         <div *ngIf="plants.length > 0">
-          <mat-card>
-            <mat-card-content>
-              <div class="mat-display-1">
-                Welcome to myPlant, where you'll never have to wonder when it is time to feed your green friends.
-              </div>
-            </mat-card-content>
-          </mat-card>
+          you got plants!
+          <div *ngFor="let plant of plants">
+            <mat-card plantMatElevationHover [defaultElevation]="defaultElevation">
+              <mat-card-title>
+                  {{plant.familyName}}
+              </mat-card-title>
+              <mat-card-subtitle>
+                {{plant.scientificName}}
+              </mat-card-subtitle>
+            </mat-card>
+            <br/>
+          </div>
         </div>
         <div *ngIf="plants.length === 0">
-          not sure yet
+          no plants!
         </div>
       </div>
     </ng-template>
   </div>
   <div class="col-md-12">
-    
+    some other section
   </div>
 </div>

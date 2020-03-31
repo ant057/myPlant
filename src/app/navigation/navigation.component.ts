@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
+  defaultElevation = 0;
 
   constructor(private router: Router) { }
 

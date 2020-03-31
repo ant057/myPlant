@@ -29,6 +29,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   plants$: Observable<Plant[]>;
   plantsLoading$: Observable<boolean>;
   componentActive = true;
+  defaultElevation = 2;
 
   constructor(private store: Store<fromApp.AppState>,
               private router: Router) { }
@@ -37,6 +38,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     this.plantsLoading$ = this.store.pipe(select(fromApp.getPlantsLoading));
 
+    //// for when auth is setup
     // this.store.pipe(
     //   select(fromAuth.getuid),
     //   takeWhile(() => this.componentActive))

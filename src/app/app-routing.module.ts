@@ -12,8 +12,8 @@ import { PlantReminderComponent } from './plant-reminder/plant-reminder.componen
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'home/plantlist', component: PlantDetailComponent },
-  { path: 'home/plantdetail', component: PlantListComponent },
+  { path: 'home/plantlist', component: PlantListComponent },
+  { path: 'home/plantdetail', component: PlantDetailComponent },
   { path: 'home/plantreminderdetail', component: PlantReminderComponent },
   /* { path: 'hero/:id',      component: HeroDetailComponent },
    {
