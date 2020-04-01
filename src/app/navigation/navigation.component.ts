@@ -9,18 +9,19 @@ import { Router } from '@angular/router';
 })
 export class NavigationComponent implements OnInit {
   defaultElevation = 0;
+  menuLinks = [
+    { path: '/home', label: 'Home' },
+    { path: '/home/plantlist', label: 'MyPlants'}
+  ];
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  navigateHome() {
-    this.router.navigate(['/home']);
-  }
-
-  navigateMyPlants() {
-    this.router.navigate(['/home/plantlist']);
+  navigate(label: string) {
+    const link = this.menuLinks.find(c => c.label === label);
+    this.router.navigate([link.path]);
   }
 
 }

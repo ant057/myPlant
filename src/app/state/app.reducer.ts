@@ -44,21 +44,21 @@ export const getPlantsLoading = createSelector(
 export function reducer(state = initialState, action: AppActions): AppState {
     switch (action.type) {
 
-        // case AppActionTypes.LoadLists:
-        //     return {
-        //         ...state
-        //     };
+        case AppActionTypes.LoadLists:
+            return {
+                ...state
+            };
 
-        // case AppActionTypes.LoadListsSuccess:
-        //     return {
-        //         ...state,
-        //         lists: action.payload
-        //     };
+        case AppActionTypes.LoadListsSuccess:
+            return {
+                ...state,
+                lists: action.payload
+            };
 
-        // case AppActionTypes.LoadListsError:
-        //     return {
-        //         ...state
-        //     };
+        case AppActionTypes.LoadListsError:
+            return {
+                ...state
+            };
 
         case AppActionTypes.LoadPlants:
             return {

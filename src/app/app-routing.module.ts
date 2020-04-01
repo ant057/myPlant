@@ -7,14 +7,14 @@ import { Routes, RouterModule } from '@angular/router';
 // components
 import { HomeComponent } from './home/home.component';
 import { PlantListComponent } from './plant-list/plant-list.component';
-import { PlantDetailComponent } from './plant-detail/plant-detail.component';
 import { PlantReminderComponent } from './plant-reminder/plant-reminder.component';
+import { AddPlantComponent } from './add-plant/add-plant.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'home/plantlist', component: PlantListComponent },
-  { path: 'home/plantdetail', component: PlantDetailComponent },
   { path: 'home/plantreminderdetail', component: PlantReminderComponent },
+  { path: 'home/addplant', component: AddPlantComponent },
   /* { path: 'hero/:id',      component: HeroDetailComponent },
    {
     path: 'heroes',

@@ -1,34 +1,34 @@
 import { Action } from '@ngrx/store';
-// import { Lists } from '../models/app/list';
+import { Lists } from '../models/app/list';
 import { Plant } from '../models/plant/plant';
 
 export enum AppActionTypes {
-    // LoadLists = '[Load Lists] Try',
-    // LoadListsSuccess = '[Load Lists] Successful',
-    // LoadListsError = '[Load Lists] Error',
+    LoadLists = '[Load Lists] Try',
+    LoadListsSuccess = '[Load Lists] Successful',
+    LoadListsError = '[Load Lists] Error',
     LoadPlants = '[Load Plants] Try',
     LoadPlantsSuccess = '[Load Plants] Successful',
     LoadPlantsError = '[Load Plants] Error',
     SelectPlant = '[Select Plant] Success'
 }
 
-// export class LoadLists implements Action {
-//     readonly type = AppActionTypes.LoadLists;
+export class LoadLists implements Action {
+    readonly type = AppActionTypes.LoadLists;
 
-//     constructor() { }
-// }
+    constructor() { }
+}
 
-// export class LoadListsSuccess implements Action {
-//     readonly type = AppActionTypes.LoadListsSuccess;
+export class LoadListsSuccess implements Action {
+    readonly type = AppActionTypes.LoadListsSuccess;
 
-//     constructor(public payload: Lists[]) { }
-// }
+    constructor(public payload: Lists[]) { }
+}
 
-// export class LoadListsError implements Action {
-//     readonly type = AppActionTypes.LoadListsError;
+export class LoadListsError implements Action {
+    readonly type = AppActionTypes.LoadListsError;
 
-//     constructor(public payload: string) { }
-// }
+    constructor(public payload: string) { }
+ }
 
 export class LoadPlants implements Action {
     readonly type = AppActionTypes.LoadPlants;
@@ -57,7 +57,7 @@ export class SelectPlant implements Action {
 export type AppActions = LoadPlants
     | LoadPlantsError
     | LoadPlantsSuccess
-    | SelectPlant;
-    // | LoadLists
-    // | LoadListsSuccess
-    // | LoadListsError;
+    | SelectPlant
+    | LoadLists
+    | LoadListsSuccess
+    | LoadListsError;

@@ -22,7 +22,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { PlantListComponent } from './plant-list/plant-list.component';
-import { PlantDetailComponent } from './plant-detail/plant-detail.component';
 import { PlantReminderComponent } from './plant-reminder/plant-reminder.component';
 import { PlantReminderDetailComponent } from './plant-reminder-detail/plant-reminder-detail.component';
 
@@ -34,6 +33,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 // firestore
 import { AngularFireModule } from '@angular/fire';
@@ -42,6 +45,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { fromEventPattern } from 'rxjs';
 import { MatElevationHoverDirective } from './directives/mat-elevation-hover.directive';
+import { AddPlantComponent } from './add-plant/add-plant.component';
 
 
 @NgModule({
@@ -50,10 +54,10 @@ import { MatElevationHoverDirective } from './directives/mat-elevation-hover.dir
     HomeComponent,
     NavigationComponent,
     PlantListComponent,
-    PlantDetailComponent,
     PlantReminderComponent,
     PlantReminderDetailComponent,
-    MatElevationHoverDirective
+    MatElevationHoverDirective,
+    AddPlantComponent
   ],
   entryComponents: [
     // AddPaymentComponent
@@ -75,7 +79,11 @@ import { MatElevationHoverDirective } from './directives/mat-elevation-hover.dir
     MatButtonModule,
     MatSidenavModule,
     MatToolbarModule,
-    MatListModule
+    MatListModule,
+    MatMenuModule,
+    MatTabsModule,
+    MatFormFieldModule,
+    MatInputModule
     // DevtoolsModule.instrument({
     //   name: 'myPlant OS Dev tools',
     //   maxAge: 25,

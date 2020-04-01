@@ -1,0 +1,58 @@
+<form [formGroup]="addPlantForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field class="full-width">
+            <mat-label>Family Name</mat-label>
+            <input type="text" matInput formControlName="familyName" required>
+          </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field class="full-width">
+            <mat-label>Scientific Name</mat-label>
+            <input type="text" matInput formControlName="scientificName" required>
+          </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field class="full-width">
+            <mat-label>Daily Sunlight (in Hours)</mat-label>
+            <input type="number" matInput formControlName="sunlightHoursDaily" required>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field class="full-width">
+            <mat-label>Weekly Water (in Oz)</mat-label>
+            <input type="number" matInput formControlName="waterWeekly" required>
+        </mat-form-field>
+      </div>
+      <!-- <div class="col-md-3">
+        <label class="label">
+          Recurring?:
+        </label><br/>
+        <nb-checkbox  status="primary" formControlName="recurringYN"></nb-checkbox>
+      </div>
+
+      <div *ngIf="addPaymentForm.value.recurringYN" class="col-md-6">
+        <label class="label">
+          Recurring Frequency:
+        </label>
+        <nb-select  formControlName="recurringFrequency">
+          <nb-option *ngFor="let val of lists[0].values" [value]="val">{{val}}</nb-option>
+        </nb-select>
+      </div>
+    
+      <div *ngIf="addPaymentForm.value.recurringYN" class="col-md-6">
+        <label class="label">
+          # Occurrences:
+        </label>
+        <input type="number" formControlName="occurrences">
+      </div>
+        -->
+      <br />
+      <br />
+      <br />
+      <br />
+      <div class="col-md-12">
+        <button mat-raised-button type="submit" [disabled]="!addPlantForm.valid">Submit</button>
+      </div>
+    </div>
+  </form>

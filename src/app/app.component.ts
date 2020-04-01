@@ -5,7 +5,6 @@ import * as fromApp from './state/app.reducer';
 import * as appActions from './state/app.actions';
 import { Store, select } from '@ngrx/store';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -19,7 +18,11 @@ export class AppComponent implements OnDestroy, OnInit {
   }
 
   ngOnInit() {
-    // this.store.dispatch(new appActions.LoadLists());
+    this.initializeAppData();
+  }
+
+  initializeAppData() {
+    this.store.dispatch(new appActions.LoadLists());
   }
 
   ngOnDestroy() {

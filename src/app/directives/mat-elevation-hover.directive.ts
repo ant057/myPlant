@@ -9,10 +9,10 @@ export class MatElevationHoverDirective implements OnChanges {
 
   constructor(private el: ElementRef,
               private renderer: Renderer2) {
-                this.setElevation(this.defaultElevation);
+    this.setElevation(this.defaultElevation);
   }
 
-  ngOnChanges(_changes: SimpleChanges) {
+  ngOnChanges(changes: SimpleChanges) {
     this.setElevation(this.defaultElevation);
   }
 

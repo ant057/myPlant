@@ -18,6 +18,10 @@ export class FirebaseService {
   constructor(private afs: AngularFirestore) {
   }
 
+  getLists() {
+    return this.afs.collection(`/lists`).valueChanges();
+  }
+
   getPlants() {
     return this.afs.collection('/plants').snapshotChanges();
   }
@@ -30,16 +34,14 @@ export class FirebaseService {
     return this.afs.collection('/household', ref => ref.where('userId' , '==', uid)).valueChanges();
   }
 
-  createPayment(value) {
-    return this.afs.collection('/payments').add({
-      account: value.account,
-      amount: value.amount,
-      description: value.description,
-      paymentDate: value.paymentDate,
-      occurrences: value.occurrences,
-      recurringFrequency: value.recurringFrequency,
-      recurringYN: value.recurringYN,
-      userId: 'G3LkTagze1by9jFarqjiksEAfel1'
+  createPlant(value) {
+    return this.afs.collection('/plants').add({
+      familyName: value.familyName,
+      scientificName: value.scientificName,
+      sunlightHoursDaily: value.sunlightHoursDaily,
+      waterWeekly: value.waterWeekly,
+      location: 'Backyard',
+      uid: '123'
     });
   }
 }

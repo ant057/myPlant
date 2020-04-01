@@ -13,13 +13,13 @@ export class AppEffects {
                 private firebase: FirebaseService) {
     }
 
-    // @Effect()
-    // loadLists$ = this.actions$.pipe(
-    //     ofType(appActions.AppActionTypes.LoadLists),
-    //     mergeMap((action: appActions.LoadLists) => this.firebase.getLists().pipe(
-    //         map((lists: Lists[]) => (new appActions.LoadListsSuccess(lists)))
-    //     ))
-    // );
+    @Effect()
+    loadLists$ = this.actions$.pipe(
+        ofType(appActions.AppActionTypes.LoadLists),
+        mergeMap((action: appActions.LoadLists) => this.firebase.getLists().pipe(
+            map((lists: Lists[]) => (new appActions.LoadListsSuccess(lists)))
+        ))
+    );
 
     @Effect()
     loadPlants$ = this.actions$.pipe(

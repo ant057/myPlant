@@ -29,7 +29,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   plants$: Observable<Plant[]>;
   plantsLoading$: Observable<boolean>;
   componentActive = true;
-  defaultElevation = 2;
 
   constructor(private store: Store<fromApp.AppState>,
               private router: Router) { }
