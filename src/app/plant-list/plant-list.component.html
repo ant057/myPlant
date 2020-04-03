@@ -1,25 +1,34 @@
 <div class="row">
   <div class="col-md-12">
-    <div>
-      <button mat-raised-button (click)="navigate()">Add a Plant!!</button>
+    <div class="mat-display-3 col-md-12">
+      My Plant Collection <button mat-raised-button (click)="navigate()">Add a Plant!!</button>
     </div>
     <div *ngIf="plantsLoading$ | async as loader; else content">
+      <mat-spinner [color]="'accent'" [diameter]="25"></mat-spinner>
       LOADING..
     </div>
     <ng-template #content>
       <div *ngIf="plants$ | async as plants">
         <div *ngIf="plants.length > 0">
-          <br/>
+          <br />
           <div *ngFor="let plant of plants">
             <mat-card plantMatElevationHover [defaultElevation]="defaultElevation" style="cursor: pointer;">
               <mat-card-title>
-                  {{plant.familyName}}
+                {{plant.familyName}}
               </mat-card-title>
               <mat-card-subtitle>
                 {{plant.scientificName}}
               </mat-card-subtitle>
+              <mat-card-content>
+                <p><b>Needs</b>
+                  Daily Sunlight - {{plant.sunlightHoursDaily}} | Weekly Water - {{plant.waterWeekly}}
+                </p>
+                <p><b>Location:</b>
+                  {{plant.location}}
+                </p>
+              </mat-card-content>
             </mat-card>
-            <br/>
+            <br />
           </div>
         </div>
         <div *ngIf="plants.length === 0">

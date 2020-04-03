@@ -11,10 +11,10 @@ import { PlantReminderComponent } from './plant-reminder/plant-reminder.componen
 import { AddPlantComponent } from './add-plant/add-plant.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'home/plantlist', component: PlantListComponent },
-  { path: 'home/plantreminderdetail', component: PlantReminderComponent },
-  { path: 'home/addplant', component: AddPlantComponent },
+  { path: 'home', component: HomeComponent, data: { animation: 'home'} },
+  { path: 'home/plantlist', component: PlantListComponent, data: { animation: 'plantlist'} },
+  { path: 'home/plantreminderdetail', component: PlantReminderComponent, data: { animation: 'plantreminderdetail'} },
+  { path: 'home/addplant', component: AddPlantComponent, data: { animation: 'addplant'} },
   /* { path: 'hero/:id',      component: HeroDetailComponent },
    {
     path: 'heroes',

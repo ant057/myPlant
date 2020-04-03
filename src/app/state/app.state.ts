@@ -1,5 +1,5 @@
 
 export interface State {
-    home: any;
+    plants: any;
     lists: any;
 }

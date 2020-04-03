@@ -12,10 +12,12 @@
       </mat-card>
     </mat-sidenav>
     <section>Main
-      <div class="container">
-        <router-outlet></router-outlet>
+      <div class="container" [@routeAnimation]="getAnimationData(routerOutlet)">
+        <router-outlet #routerOutlet="outlet"></router-outlet>
       </div>
     </section>
   </mat-sidenav-container>
   <mat-toolbar class="footer">Powered by anthonycunningham.io</mat-toolbar>
 </div>
+
+

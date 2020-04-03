@@ -1,3 +1,8 @@
 export interface Plant {
-    name: string;
+    familyName: string;
+    scientificName: string;
+    sunlightDailyHours: string;
+    waterWeekly: string;
+    uid: string;
+    location: string;
 }

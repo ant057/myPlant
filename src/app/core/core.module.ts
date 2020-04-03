@@ -2,6 +2,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 // angular routing
 import { AppRoutingModule } from '../app-routing.module';
@@ -34,7 +35,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     { provide: HTTP_INTERCEPTORS, useClass: AddHeaderInterceptor, multi: true},
     { provide: HTTP_INTERCEPTORS, useClass: LogResponseInterceptor, multi: true},
     { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true},
-    HttpCacheService
+    HttpCacheService,
+    MatSnackBar
   ]
 })
 export class CoreModule { }

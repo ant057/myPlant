@@ -9,7 +9,7 @@ import { CoreModule } from './core/core.module';
 
 // ngrx store
 import { StoreModule } from '@ngrx/store';
-// import { DevtoolsModule } from '@ngrx/devtools';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { reducer } from './state/app.reducer';
 import { AppEffects } from './state/app.effects';
@@ -37,6 +37,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 // firestore
 import { AngularFireModule } from '@angular/fire';
@@ -83,12 +85,14 @@ import { AddPlantComponent } from './add-plant/add-plant.component';
     MatMenuModule,
     MatTabsModule,
     MatFormFieldModule,
-    MatInputModule
-    // DevtoolsModule.instrument({
-    //   name: 'myPlant OS Dev tools',
-    //   maxAge: 25,
-    //   logOnly: environment.production
-    // })
+    MatInputModule,
+    MatSelectModule,
+    MatProgressSpinnerModule,
+    StoreDevtoolsModule.instrument({
+      name: 'myPlant OS Dev tools',
+      maxAge: 25,
+      logOnly: environment.production
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

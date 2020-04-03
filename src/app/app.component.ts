@@ -1,4 +1,9 @@
+// angular
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+
+// animations
+import { fader, slideInAnimation } from './animations';
 
 // ngrx
 import * as fromApp from './state/app.reducer';
@@ -8,7 +13,8 @@ import { Store, select } from '@ngrx/store';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [fader]
 })
 export class AppComponent implements OnDestroy, OnInit {
   theme: string;
@@ -23,9 +29,13 @@ export class AppComponent implements OnDestroy, OnInit {
 
   initializeAppData() {
     this.store.dispatch(new appActions.LoadLists());
+    this.store.dispatch(new appActions.LoadPlants('123'));
+  }
+
+  getAnimationData(outlet: RouterOutlet) {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
   }
 
   ngOnDestroy() {
-
   }
 }

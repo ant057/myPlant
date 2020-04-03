@@ -3,6 +3,7 @@
       Welcome to myPlant, where you'll never have to wonder when it is time to feed your green friends.
     </div>
     <div class="col-md-12" *ngIf="plantsLoading$ | async as loader">
-      LOADING..
+      <mat-spinner [color]="'accent'" [diameter]="25"></mat-spinner>
+      LOADING..      
     </div>
 </div>

@@ -40,7 +40,7 @@ export class FirebaseService {
       scientificName: value.scientificName,
       sunlightHoursDaily: value.sunlightHoursDaily,
       waterWeekly: value.waterWeekly,
-      location: 'Backyard',
+      location: value.location,
       uid: '123'
     });
   }

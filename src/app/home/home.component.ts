@@ -16,8 +16,6 @@ import * as appActions from '../state/app.actions';
 import { Plant } from '../models/plant/plant';
 
 // components
-// import { AddPaymentComponent } from '../add-payment/add-payment.component';
-
 
 @Component({
   selector: 'plant-home',
@@ -49,7 +47,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     //     }
     //   );
 
-    this.store.dispatch(new appActions.LoadPlants('123'));
     this.plants$ = this.store.pipe(select(fromApp.getPlants));
   }
 
