@@ -44,10 +44,12 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 
 import { fromEventPattern } from 'rxjs';
 import { MatElevationHoverDirective } from './directives/mat-elevation-hover.directive';
 import { AddPlantComponent } from './add-plant/add-plant.component';
+import { DragDropDirective } from './directives/drag-drop.directive';
 
 
 @NgModule({
@@ -59,7 +61,8 @@ import { AddPlantComponent } from './add-plant/add-plant.component';
     PlantReminderComponent,
     PlantReminderDetailComponent,
     MatElevationHoverDirective,
-    AddPlantComponent
+    AddPlantComponent,
+    DragDropDirective
   ],
   entryComponents: [
     // AddPaymentComponent
@@ -72,6 +75,7 @@ import { AddPlantComponent } from './add-plant/add-plant.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    AngularFireStorageModule,
     // FlexLayoutModule,
     StoreModule.forRoot({ app: reducer}),
     EffectsModule.forRoot([AppEffects]),

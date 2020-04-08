@@ -5,4 +5,5 @@ export interface Plant {
     waterWeekly: string;
     uid: string;
     location: string;
+    imageId: string;
 }
