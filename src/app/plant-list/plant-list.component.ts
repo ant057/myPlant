@@ -46,12 +46,11 @@ export class PlantListComponent implements OnInit, OnDestroy {
           if (data) {
             data.forEach(x => {
               this.plantFileNames.push(x.imageId);
+              // wtf.. fix this
           });
             this.plantFileNames.forEach(x => {
               this.getImageURL(x);
             });
-            //console.log(this.plantFileNames);
-            //console.log(this.plantUrls);
         }
         },
         error(msg) {
@@ -66,8 +65,8 @@ export class PlantListComponent implements OnInit, OnDestroy {
   }
 
   getImageURL(imageId) {
-    this.plantUrls.push(this.firestore.getImageURL(imageId).toPromise().then(x => x));
-    console.log(this.plantUrls);
+    this.firestore.getImageURL(imageId).toPromise().then(x => this.plantUrls.push(x));
+    //console.log(this.plantUrls);
   }
 
   ngOnDestroy() {

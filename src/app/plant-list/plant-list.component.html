@@ -1,17 +1,17 @@
 <div class="row">
-  <div class="col-md-12">
-    <div class="mat-display-3 col-md-12">
-      My Plant Collection <button mat-raised-button (click)="navigate()">Add a Plant!!</button>
-    </div>
-    <div *ngIf="plantsLoading$ | async as loader; else content">
-      <mat-spinner [color]="'accent'" [diameter]="25"></mat-spinner>
-      LOADING..
-    </div>
-    <ng-template #content>
-      <div *ngIf="plants$ | async as plants">
-        <div *ngIf="plants.length > 0">
-          <br />
-          <div *ngFor="let plant of plants">
+  <div class="mat-display-3 col-12">
+    My Plant Collection <button mat-raised-button (click)="navigate()">Add a Plant!!</button>
+  </div>
+  <div *ngIf="plantsLoading$ | async as loader; else content" class="col-12">
+    <mat-spinner [color]="'accent'" [diameter]="25"></mat-spinner>
+    LOADING..
+  </div>
+  <ng-template #content class="col-12">
+    <div *ngIf="plants$ | async as plants">
+      <div *ngIf="plants.length > 0">
+        <br />
+        <div class="row justify-content-center">
+          <div class="col-4" *ngFor="let plant of plants; let i = index">
             <mat-card plantMatElevationHover [defaultElevation]="defaultElevation" style="cursor: pointer;">
               <mat-card-title>
                 {{plant.familyName}}
@@ -19,8 +19,7 @@
               <mat-card-subtitle>
                 {{plant.scientificName}}
               </mat-card-subtitle>
-              <!-- <img mat-card-image [src]="getImageURL(plant.imageId)" style="height: 200px; width: 200px;"> -->
-              <img mat-card-image [src]="plantUrls[1]" style="height: 200px; width: 200px;">
+              <img mat-card-image [src]="plantUrls[i]">
               <mat-card-content>
                 <p><b>Needs</b>
                   Daily Sunlight - {{plant.sunlightHoursDaily}} Hours | Weekly Water - {{plant.waterWeekly}} Oz.
@@ -30,16 +29,15 @@
                 </p>
               </mat-card-content>
             </mat-card>
-            <br />
           </div>
         </div>
-        <div *ngIf="plants.length === 0">
-          no plants!
-        </div>
       </div>
-    </ng-template>
-  </div>
-  <div class="col-md-12">
+      <div *ngIf="plants.length === 0">
+        no plants!
+      </div>
+    </div>
+  </ng-template>
+  <div class="col-12">
     some other section
   </div>
 </div>

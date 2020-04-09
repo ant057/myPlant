@@ -40,7 +40,6 @@ export class AddPlantComponent implements OnInit {
   ngOnInit(): void {
     this.store.pipe(select(fromApp.getLists)).subscribe((lists: Lists[]) => {
       this.lists = lists;
-      // this.addPlantForm.controls.location.patchValue(this.lists[0].values[0]); // default
     });
   }
 
@@ -49,7 +48,6 @@ export class AddPlantComponent implements OnInit {
   }
 
   uploadImage(): void {
-    // get image upload file obj;
     this.firestore.uploadImage(this.files[0].file, this.imageId.toString());
   }
 
@@ -57,10 +55,10 @@ export class AddPlantComponent implements OnInit {
     // TODO: Use EventEmitter with form value
     console.warn(this.addPlantForm.value);
 
-    this.firestore.createPlant(this.addPlantForm.value, this.imageId)
+    this.firestore.createPlant(this.addPlantForm.value, this.imageId) // promise??
       .then(
         res => {
-          this.uploadImage();
+          this.uploadImage(); // here??
           this.files = [];
           this.addPlantForm.reset();
           formDirective.resetForm();
