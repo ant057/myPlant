@@ -20,7 +20,7 @@
                 {{plant.scientificName}}
               </mat-card-subtitle>
               <!-- <img mat-card-image [src]="getImageURL(plant.imageId)" style="height: 200px; width: 200px;"> -->
-              <img mat-card-image [src]="plantImageUrl$ | async" style="height: 200px; width: 200px;">
+              <img mat-card-image [src]="plantUrls[1]" style="height: 200px; width: 200px;">
               <mat-card-content>
                 <p><b>Needs</b>
                   Daily Sunlight - {{plant.sunlightHoursDaily}} Hours | Weekly Water - {{plant.waterWeekly}} Oz.
