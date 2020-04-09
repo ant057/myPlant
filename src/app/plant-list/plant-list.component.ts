@@ -33,7 +33,6 @@ export class PlantListComponent implements OnInit, OnDestroy {
   constructor(private store: Store<fromApp.AppState>,
               private router: Router,
               private firestore: FirebaseService) {
-    // this.plantImageUrl$ = this.firestore.getImageURL('fa7d40ca-5378-eeaf-0689-d29fb8349a7f');
   }
 
   ngOnInit(): void {
@@ -66,7 +65,6 @@ export class PlantListComponent implements OnInit, OnDestroy {
 
   getImageURL(imageId) {
     this.firestore.getImageURL(imageId).toPromise().then(x => this.plantUrls.push(x));
-    //console.log(this.plantUrls);
   }
 
   ngOnDestroy() {
