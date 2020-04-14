@@ -39,18 +39,15 @@ export class PlantListComponent implements OnInit, OnDestroy {
     this.plantsLoading$ = this.store.pipe(select(fromApp.getPlantsLoading));
     this.plants$ = this.store.pipe(select(fromApp.getPlants));
 
-    const aSubscription = this.plants$.subscribe( //takeWhile(),
+    const aSubscription = this.plants$.subscribe( // takeWhile(),
       {
-        next: (data) => {
-          if (data) {
-            data.forEach(x => {
-              this.plantFileNames.push(x.imageId);
+        next: (plant) => {
+          if (plant) {
+            plant.forEach(x => {
+              this.getImageURL(x.imageId);
               // wtf.. fix this
-          });
-            this.plantFileNames.forEach(x => {
-              this.getImageURL(x);
             });
-        }
+          }
         },
         error(msg) {
           console.log(msg);
