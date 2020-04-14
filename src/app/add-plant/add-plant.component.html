@@ -1,5 +1,8 @@
 <form [formGroup]="addPlantForm" #formDirective="ngForm" (ngSubmit)="onSubmit(formDirective)">
   <div class="row">
+    <div class="mat-display-3 col-12">
+      Add Plant
+    </div>
     <div class="col-md-6">
       <mat-form-field class="full-width">
         <mat-label>Family Name</mat-label>
@@ -24,7 +27,7 @@
         <input type="number" matInput formControlName="waterWeekly" required>
       </mat-form-field>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-3">
       <mat-form-field *ngIf="lists">
         <mat-label>Plant Location</mat-label>
         <mat-select formControlName="location">
@@ -34,11 +37,22 @@
         </mat-select>
       </mat-form-field>
     </div>
+    <div class="col-md-3">
+      <mat-form-field *ngIf="lists">
+        <mat-label>Water Frequency</mat-label>
+        <mat-select formControlName="waterFrequency">
+          <mat-option *ngFor="let val of lists[1].values" [value]="val" required>
+            {{val}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
     <div class="col-md-6">
-      Add your plant picture here
       <div *ngIf="!files.length" class="rmpm dropzone" plantDragDrop (filesEmitter)="filesDropped($event)">
         <div class="text-wrapper">
-          <div class="centered">Drop your file here!</div>
+          <div class="centered">
+            Drop your plant picture here!
+          </div>
         </div>
       </div>
       <!--droped image preview-->

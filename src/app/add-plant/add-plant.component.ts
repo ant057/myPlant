@@ -26,7 +26,8 @@ export class AddPlantComponent implements OnInit {
     scientificName: new FormControl(''),
     sunlightHoursDaily: new FormControl(''),
     waterWeekly: new FormControl(''),
-    location: new FormControl('')
+    location: new FormControl(''),
+    waterFrequency: new FormControl('')
   });
   files: FileHandle[] = [];
   imageId: Guid;
@@ -34,8 +35,7 @@ export class AddPlantComponent implements OnInit {
   constructor(private firestore: FirebaseService,
               private store: Store<fromApp.AppState>,
               private snackBar: MatSnackBar) {
-                this.imageId = Guid.create();
-              }
+  }
 
   ngOnInit(): void {
     this.store.pipe(select(fromApp.getLists)).subscribe((lists: Lists[]) => {
@@ -55,21 +55,49 @@ export class AddPlantComponent implements OnInit {
     // TODO: Use EventEmitter with form value
     console.warn(this.addPlantForm.value);
 
+    if (this.files.length > 0) {
+      this.imageId = Guid.create();
+    }
+
+    let waterReminder: string;
+    switch (this.addPlantForm.value.waterFrequency) {
+      case 'Daily':
+        waterReminder = 'Tomrorow!';
+        break;
+      case 'Weekly':
+        waterReminder = 'in One Week!';
+        break;
+      case 'Bi-Weekly':
+        waterReminder = 'in Two Weeks!';
+        break;
+      case 'Monthly':
+        waterReminder = 'in One Month!';
+        break;
+      case 'Never':
+        waterReminder = '..Never!!';
+        break;
+      default:
+        waterReminder = '!';
+        break;
+    }
+
     this.firestore.createPlant(this.addPlantForm.value, this.imageId) // promise??
       .then(
         res => {
-          this.uploadImage(); // here??
+          if (this.files.length > 0) {
+            this.uploadImage(); // here??
+          }
           this.files = [];
           this.addPlantForm.reset();
           formDirective.resetForm();
-          this.openSnackBar('Succesfully Saved!', 'Close');
+          this.openSnackBar(`Succesfully Saved! We will reminder you to water this plant ${waterReminder}`, 'Close');
         }
       );
   }
 
   openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, {
-      duration: 2000,
+      duration: 4000,
       verticalPosition: 'top'
     });
   }

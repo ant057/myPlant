@@ -41,11 +41,12 @@ export class PlantListComponent implements OnInit, OnDestroy {
 
     const aSubscription = this.plants$.subscribe( // takeWhile(),
       {
-        next: (plant) => {
-          if (plant) {
-            plant.forEach(x => {
-              this.getImageURL(x.imageId);
-              // wtf.. fix this
+        next: (plants) => {
+          if (plants) {
+            plants.forEach(plant => {
+              if (plant.imageId !== '') {
+                this.getImageURL(plant.imageId);
+              }
             });
           }
         },

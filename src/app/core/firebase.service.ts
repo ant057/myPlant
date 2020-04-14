@@ -32,10 +32,6 @@ export class FirebaseService {
     return this.afs.collection('/plants', ref => ref.where('uid' , '==', uid)).valueChanges();
   }
 
-  getMyHouseholds(uid: string) {
-    return this.afs.collection('/household', ref => ref.where('userId' , '==', uid)).valueChanges();
-  }
-
   createPlant(value, imageId) {
     return this.afs.collection('/plants').add({
       familyName: value.familyName,
@@ -44,7 +40,8 @@ export class FirebaseService {
       waterWeekly: value.waterWeekly,
       location: value.location,
       uid: '123',
-      imageId: imageId.toString()
+      imageId: imageId ? imageId.toString() : '',
+      waterFrequency: value.waterFrequency
     });
   }
 
@@ -53,7 +50,6 @@ export class FirebaseService {
     const task = storageRef.put(file);
   }
 
-  // need to subscripe to this? to get image urls to come thru
   getImageURL(filename) {
     const storageRef = this.afstorage.ref(filename);
     const URL = storageRef.getDownloadURL();

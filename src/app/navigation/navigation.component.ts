@@ -11,7 +11,8 @@ export class NavigationComponent implements OnInit {
   defaultElevation = 0;
   menuLinks = [
     { path: '/home', label: 'Home' },
-    { path: '/home/plantlist', label: 'MyPlants'}
+    { path: '/home/plantlist', label: 'MyPlants'},
+    { path: '/home/notificationsettings', label: 'Notification Settings'}
   ];
 
   constructor(private router: Router) { }

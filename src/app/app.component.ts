@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 // animations
-import { fader, slideInAnimation } from './animations';
+import { fadeInAnimation } from './animations';
 
 // ngrx
 import * as fromApp from './state/app.reducer';
@@ -14,7 +14,7 @@ import { Store, select } from '@ngrx/store';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [fader]
+  animations: [fadeInAnimation]
 })
 export class AppComponent implements OnDestroy, OnInit {
   theme: string;
